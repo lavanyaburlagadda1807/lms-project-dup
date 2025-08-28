@@ -1,0 +1,34 @@
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 40px;
+}
+
+.pagination-container button {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #475569;
+  transition: 0.3s;
+}
+
+.pagination-container button:hover {
+  background-color: #f1f5f9;
+}
+
+.pagination-container .active {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+}

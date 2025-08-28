@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { useState } from 'react'
 
-function App() {
+import './App.css'
+import Home from './components/Home'
+import ActiveTabContext from './components/ActiveTabContext'
+import ActivePageContext from './components/ActivePageContext'
+
+const App = () => {
+  const [activeTab, setActiveTab] = useState("INSTRUCTOR")
+  const [activePage, setActivePage] = useState(1)
+
+  const toggleActiveTab = (tabId) => setActiveTab(tabId)
+  const changeActivePage = (pageNum) => setActivePage(pageNum)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ActiveTabContext.Provider value={{ activeTab, toggleActiveTab }}>
+      <ActivePageContext.Provider value={{ activePage, changeActivePage }}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </BrowserRouter>
+      </ActivePageContext.Provider>
+    </ActiveTabContext.Provider>
+  )
 }
 
-export default App;
+export default App

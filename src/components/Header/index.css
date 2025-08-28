@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tab-container {
+  display: flex;
+  gap: 16px;
+}
+
+.tab-container button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #475569;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.tab-container button:hover {
+  background-color: #f1f5f9;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-section img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
